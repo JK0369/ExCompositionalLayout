@@ -112,7 +112,7 @@ class ViewController: UIViewController {
     section.orthogonalScrollingBehavior = .paging
     section.visibleItemsInvalidationHandler = { [weak self] (visibleItems, offset, env) in
       guard let ss = self else { return }
-      let normalizedOffsetX = offset.x + 10
+      let normalizedOffsetX = offset.x
       let centerPoint = CGPoint(x: normalizedOffsetX + ss.collectionView.bounds.width / 2, y: 20)
       visibleItems.forEach({ item in
         guard let cell = ss.collectionView.cellForItem(at: item.indexPath) else { return }
